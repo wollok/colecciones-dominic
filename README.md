@@ -14,6 +14,7 @@ Las acciones que se realizan son:
 5. Al final de la temporada vende todos sus vehículos.
 
 En cualquier momento se quiere averiguar:
+
 6. El promedio de velocidades máximas de todos sus autos, estén en condiciones o no.
 7. El auto más rápido que tiene, entre los que están en condiciones de correr.
 8. Si la velocidad del auto más rápido es mas del doble que el promedio de velocidades máximas de todos los autos
