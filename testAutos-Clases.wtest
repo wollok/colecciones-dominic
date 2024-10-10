@@ -1,0 +1,36 @@
+import autos-Clases.*
+import colores.*
+
+describe "group of tests for dominic" {
+
+  test "dominic velocidad promedio con un auto" {
+    dominic.comprar(intocable)
+    assert.equals(45, dominic.promedioVelocidades())
+  }
+
+  test "auto en condiciones mas rapido de dominic es ferrari cuando la flecha no esta en condiciones" {
+    const unaFerrari = new Ferrari()
+    dominic.comprar(intocable)
+    dominic.comprar(unaFerrari)
+    dominic.comprar(new Ferrari(motor = 10))
+    dominic.comprar(new AutoCombustible())
+    assert.equals(unaFerrari, dominic.masRapido())
+  }
+  test "auto en condiciones mas rapido de dominic es flecha cuando la flecha esta en condiciones" {
+    const flecha = new AutoCombustible(color=rojo, combustible = nitro)
+    
+    dominic.comprar(intocable)
+    dominic.comprar(new Ferrari())
+    dominic.comprar(flecha)
+    dominic.comprar( new AutoCombustible(color=rojo, combustible = nafta))
+    dominic.comprar( new AutoCombustible(color=rojo, combustible = gasolina))
+
+    assert.equals(flecha, dominic.masRapido())
+  }
+ test "no hay un auto muy rapido " {
+    dominic.comprar(intocable)
+    assert.notThat(dominic.hayUnAutoMuyRapido())
+  }
+
+  
+}

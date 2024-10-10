@@ -1,0 +1,31 @@
+
+import autos.*
+
+describe "group of tests for dominic" {
+
+  test "dominic velocidad promedio con un auto" {
+    dominic.comprar(intocable)
+    assert.equals(45, dominic.promedioVelocidades())
+  }
+
+  test "auto en condiciones mas rapido de dominic es ferrari cuando la flecha no esta en condiciones" {
+    dominic.comprar(intocable)
+    dominic.comprar(ferrari)
+    dominic.comprar(flecha)
+    assert.equals(ferrari, dominic.masRapido())
+  }
+  test "auto en condiciones mas rapido de dominic es flecha cuando esta en condiciones" {
+    dominic.comprar(intocable)
+    dominic.comprar(ferrari)
+    dominic.comprar(flecha)
+    flecha.reparar()
+    flecha.reparar()
+    assert.equals(flecha, dominic.masRapido())
+  }
+ test "no hay un auto muy rapido " {
+    dominic.comprar(intocable)
+    assert.notThat(dominic.hayUnAutoMuyRapido())
+  }
+
+  
+}
